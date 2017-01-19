@@ -8,14 +8,14 @@ public class test {
 		int num;
 	
 		
-		System.out.println("======ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½======");
-		System.out.println("ï¿½ï¿½ï¿½Ï½Ã´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ (ï¿½Ô·Â¹ï¿½ï¿½ï¿½ : 2~9)");
-		System.out.print("ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ :");
+		System.out.println("======±¸±¸´Ü ÇÁ·Î±×·¥======");
+		System.out.println("¿øÇÏ½Ã´Â ±¸±¸´ÜÀ» ÀÔ·ÂÇÏ¼¼¿ä (ÀÔ·Â¹üÀ§ : 2~9)");
+		System.out.print("¿øÇÏ´Â ±¸±¸´Ü :");
 		
 		num = input.nextInt();
 		
 		System.out.println("====================");
-		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+ num + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+		System.out.println("±¸±¸´Ü"+ num + "´ÜÀ» Ãâ·ÂÇÕ´Ï´Ù.");
 		
 		int l=0;
 		while (l<9) {
