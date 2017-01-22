@@ -15,17 +15,11 @@ public class HW_Pyramid {
 			
 			for (int col =1; col<=row; col++) {
 			
-				System.out.println("%");
-			
+				System.out.print("%");
 				
 			}
 			System.out.println();
 		}
-		
-		
-		
-		
-		
 		
 	}
 

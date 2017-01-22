@@ -4,15 +4,24 @@ public class HW_Var {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		
 		Scanner a = new Scanner (System.in);
-
-		while(true) {
+		for (int i =0; i<3; i++) {
 		
 		int menu ;
 		
+		System.out.println(" 메뉴를 입력하시오 ");
+		System.out.println("1. 다섯 수를 입력하면 총합, 평균을 계산해주는 프로그램");
+		System.out.println("2. 온도를 섭씨에서 화씨로 계산해주는 프로그램");
+		System.out.println("3. BMI 계산해주는 프로그램");
+		System.out.println("4.종료");
+		
+		
+		
+		
+		
+		
 		menu = a.nextInt();
+		
 		
 		
 		if (menu==1) {
@@ -60,31 +69,32 @@ public class HW_Var {
 		}
 		
 		else if( menu==3) {
-			double weight, height, bmi;
+			double weight, height;
+			
+			System.out.println("체중을 입력하시오");
 			
 			Scanner h = new Scanner(System.in);
+			System.out.println("키를 입력하시오");
 			Scanner j = new Scanner(System.in);
 			
 			weight = h.nextInt();
 			height = j.nextInt();
 			
-			bmi = weight/ (height*height);
 			
-			String message = String.format("BMI는 %.2f이다.",bmi );
+			
+			String message = String.format("BMI는 %.5f이다.",	weight / (height*height));
 			System.out.println(message);
 			
 			h.close();
 			j.close();
 		}
 		
-		else
-			System.out.println("프로그램 종료");
+		else 
 			
-			break;
+		break;
 		}
-		
+		System.out.println("종료합니다");
 		a.close();
-		
 	}
 
 }
