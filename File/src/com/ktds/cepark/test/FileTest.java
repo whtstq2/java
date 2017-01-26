@@ -22,7 +22,7 @@ public class FileTest {
 		File javaFolder = new File(languagesFolder.getAbsolutePath() + File.separator + "Java" );
 		
 		if (javaFolder.isDirectory() ){
-			System.out.println(javaFolder.getAbsolutePath() + "는 폴더 입니다");
+//			System.out.println(javaFolder.getAbsolutePath() + "는 폴더 입니다");
 		}
 		
 		else {
