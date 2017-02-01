@@ -1,81 +1,49 @@
 package com.ktds.cepark.seller;
 
 import com.ktds.cepark.buyer.Buyer;
+import com.ktds.cepark.vo.BasketVO;
 
 public class Seller {
-	/**
-	 * »óÇ°°¡°İ
-	 */
+
 	private final int PRICE = 2500;
 	
-	/**
-	 * ÆÇ¸ÅÀÚ°¡ °¡Áø ±İ¾×
-	 */
-	private int money;
+	private BasketVO basketVO;
 	
-	/**
-	 * ÆÇ¸ÅÀÚ°¡ °¡Áø »óÇ°ÀÇ °¹¼ö 
-	 */
-	private int productQuantity;
-	
-	// µ¥ÀÌÅÍ 500,50000À» ¹Ş¾Æ¼­ ÀúÀåÇÏ´Â º¯¼ö money, productQuantity
 	public Seller (int productQuantity, int money) {
-		System.out.println("ÆÇ¸ÅÀÚ¸¦ »ı¼ºÇÕ´Ï´Ù");
+		System.out.println("íŒë§¤ìë¥¼ ìƒì„±í•©ë‹ˆë‹¤");
 		
-		setProductQuantity(productQuantity);
-		setMoney(money);
+		basketVO = new BasketVO();
+		
+		
+		basketVO.setProductQuantity(productQuantity);
+		basketVO.setMoney(money);
 		
 		System.out.println(this);
 	}
 	
-	public void setMoney(int money) {
-		this.money = money;
-		// µ¥ÀÌÅÍ¸¦ º¯¼ö¿¡ °¡Á® ¿Ã¼ö ÀÖ°Ô ÇØÁÖ´Â ¸Ş¼Òµå set
-	}
 	
-	public int getMoney() {
-		return this.money;
-		// µ¥ÀÌÅÍ¸¦ º¯¼ö¿¡ °¡Á®¿À´Â ¸Ş¼Òµå get
-	}
-	
-	public void setProductQuantity( int productQuantity) {
-		 this.productQuantity = productQuantity;
-	}
-	
-	public int getProductQuantity() {
-		return this.productQuantity;
-	}
-	
-	
-	/**
-	 * ÆÇ¸ÅÇÏ±â
-	 */
 	public void sell(Buyer buyer) {
-		//ÆÇ¸ÅÀÚ°¡ °¡Áø »óÇ°ÀÇ °¹¼ö¿¡¼­ ÇÏ³ª¸¦ –A´Ù 
-		this.productQuantity--;
-		//±¸¸ÅÀÚ´Â µ·À» ÁöºÒÇÑ´Ù 
+		
+		
+		basketVO.minusproductQuantity();
+		
 		buyer.pay(PRICE);
-		//ÆÇ¸ÅÀÚ°¡ °¡Áø ±İ¾×¿¡¼­ »óÇ°ÀÇ °¡°İ¸¸Å­ ´õÇÑ´Ù
-		this.money+=PRICE;
+		
+		basketVO.plusMoney(PRICE);
 	}
-	/**
-	 * Àç°íÆÄ¾ÇÇÏ±â
-	 * @return : boolean Àç°í°¡ ÀÖÀ¸¸é false, Àç°í°¡ ¾øÀ¸¸é true.
-	 */
+	
 	
 	public boolean isSoldOut() {
-		boolean isSoldOut = this.productQuantity ==0;
+		boolean isSoldOut = basketVO.getProductQuantity() ==0;
 		return isSoldOut;
 	}
 	
-	/**
-	 * ÆÇ¸ÅÀÚ ÇöÈ² ÆÄ¾ÇÇÏ±â
-	 */
+
 	
 	@Override
 	public String toString() {
-		String message = String.format("ÆÇ¸ÅÀÚÀÇ »óÇ°°¹¼ö:%d, ÆÇ¸ÅÀÚ°¡ °¡Áø ±İ¾×: %d", 
-				this.productQuantity, this.money);
+		String message = String.format("ë…¸í•œê¸€:%d, ì˜ˆìŠ¤í•œê¸€: %d", 
+				basketVO.getProductQuantity(), basketVO.getMoney());
 		return message;
 	}
 	

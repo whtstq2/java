@@ -1,82 +1,39 @@
 package com.ktds.cepark.buyer;
 
 import com.ktds.cepark.seller.Seller;
+import com.ktds.cepark.vo.BasketVO;
 
-/**
- * 
- * Seller¿¡°Ô »óÇ°À» ±¸¸ÅÇÏ°í ±İ¾×À» Seller¿¡°Ô ÁöºÒÇÑ´Ù
- * 
- * @author Ã¤Àº
- *
- */
+
 public class Buyer {
+	private BasketVO basketVO;
 
-	/**
-	 * »óÇ°°¹¼ö º¯¼ö Á¤ÀÇ
-	 */
-	private int productQuantity;
-	
-	/**
-	 * ±¸¸ÅÀÚ°¡ °¡Áø ±İ¾× º¯¼ö Á¤ÀÇ 
-	 */
-	private int money;
+
 	
 	
 	public Buyer(int productQuantity, int money) {
-		System.out.println("±¸¸ÅÀÚ¸¦ »ı¼ºÇÕ´Ï´Ù");
-		//ÃÊ±â°ª¼¼ÆÃ
-		setProductQuantity(productQuantity);
-		setMoney(money);
-		//ÇöÈ²Ãâ·ÂÇÏ±â 
+		System.out.println("ì–´íœ´ í•œê¸€ ì™œì´ëŸ¼");
+		
+		basketVO.setProductQuantity(productQuantity);
+		basketVO.setMoney(money);
+		
 		System.out.println(this);
 		
 	}
 	
-	public void setProductQuantity( int productQuantity) {
-		this.productQuantity = productQuantity;
-	}
-	/**
-	 * »óÇ°°¹¼ö¸¦ ¹İÈ¯ÇÔ (Ãâ·Â¿ë)
-	 * @return
-	 */
-	public int getProductQuantity() {
-		return this.productQuantity;
-	}
 	
-	/** 
-	 * ±¸¸ÅÀÚÀÇ °¡Áø µ·À» ÃÊ±âÈ­ ¶Ç´Â °»½ÅÇÑ
-	 */
-	
-	public void setMoney( int money) {
-		this.money = money;
-	}
-	/**
-	 * ±¸¸ÅÀÚ°¡ °¡Áø µ·À» ¹İÈ¯ÇÔ(Ãâ·Â¿ë)
-	 * @return
-	 */
-	public int getMoney() {
-		return this.money;
-	}
-	/**
-	 * ±¸¸ÅÇÏ±â 
-	 * ±¸¸ÅÀÚ°¡ °¡Áø »óÇ° °¹¼ö¿¡ 1 ´õÇØÁØ´Ù 
-	 */
 	public void buy(Seller seller) {
 		seller.sell(this);
-		this.productQuantity++;
+		basketVO.getProductQuantity();
 	}
-	/**
-	 * ±¸¸ÅÀÚ°¡ °¡Áøµ·¿¡¼­ ÁöºÒÇÒ µ·À» »«´Ù 
-	 * @param money : ÁöºÒÇÒ ±İ¾×
-	 */
+
 	public void pay(int money) {
-		this.money-=money;
+		basketVO.getMoney();
 	}
-	//buyer¿¡°Ô ÁÙµ·= int money
+	
 	
 	@Override
 	public String toString() {
-		String message = String.format("±¸¸ÅÇÑ »óÇ° °¹¼ö : %d\n±¸¸ÅÀÚ°¡ °¡Áø ±İ¾×: %d" , this.productQuantity,this.money);
+		String message = String.format(" ìë°”ì—ì„œ í•œê¸€ì“°ì§€ë§ˆ: %d" , basketVO.getProductQuantity(),basketVO.getMoney());
 		return message;
 	}
 	

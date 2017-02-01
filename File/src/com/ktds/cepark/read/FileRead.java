@@ -25,7 +25,7 @@ public class FileRead {
 						break;
 					}
 					System.out.println(line);
-					
+					FileWriteHelper.log(line);
 				}
 
 			} catch (IOException e) {

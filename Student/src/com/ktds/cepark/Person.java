@@ -2,7 +2,7 @@ package com.ktds.cepark;
 
 public class Person {
 	
-	private String name;
+	private String names;
 	private String job;
 	/*	name ="익명";
 		job ="알수 없음"; */
@@ -19,7 +19,7 @@ public class Person {
 	}
 	
 	public void setName(String name) {
-		this.name = name;
+		this.names = name;
 	}
 	
 	public void setJob(String job) {
@@ -29,7 +29,7 @@ public class Person {
 	
 	public void introduce() {
 		
-		String message = String.format ("이름 : %s, 직업: %s",name,job);
+		String message = String.format ("이름 : %s, 직업: %s",names,job);
 		System.out.println(message);
 	}
 	
