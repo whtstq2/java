@@ -5,9 +5,10 @@ public class HW_Var {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner a = new Scanner (System.in);
-		for (int i =0; i<3; i++) {
+		
 		
 		int menu ;
+		while(true) { 
 		
 		System.out.println(" 메뉴를 입력하시오 ");
 		System.out.println("1. 다섯 수를 입력하면 총합, 평균을 계산해주는 프로그램");
@@ -28,11 +29,7 @@ public class HW_Var {
 			int sum;
 			double aver;
 			System.out.println("점수 다섯개를 입력하시오");
-			Scanner b = new Scanner (System.in);
-			Scanner c = new Scanner (System.in);
-			Scanner d = new Scanner (System.in);
-			Scanner e = new Scanner (System.in);
-			Scanner f = new Scanner (System.in);
+			
 			
 			int num1 = b.nextInt();
 			int num2 = c.nextInt();
@@ -46,11 +43,7 @@ public class HW_Var {
 			String message = String.format("총점은 %d 이고 평균은 %.2f 입니다", sum, aver);
 			System.out.println(message);
 			
-			b.close();
-			c.close();
-			d.close();
-			e.close();
-			f.close();
+		
 		}
 			
 		else if (menu==2) {
@@ -89,12 +82,14 @@ public class HW_Var {
 			j.close();
 		}
 		
-		else 
-			
-		break;
+		else if(menu ==4){
+		break;	
+		System.out.println("종료합니다"); 
 		}
-		System.out.println("종료합니다");
+		}
 		a.close();
+		
+		
 	}
 
 }
