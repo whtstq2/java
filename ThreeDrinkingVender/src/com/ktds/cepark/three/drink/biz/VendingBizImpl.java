@@ -31,7 +31,7 @@ public class VendingBizImpl implements VendingBiz {
 		sc = new Scanner(System.in);
 	}
 
-	public int showingProduct(int inputMoney) {
+	public void showingProduct(int inputMoney) {
 			int selectDrink = 0;
 			
 
@@ -47,10 +47,12 @@ public class VendingBizImpl implements VendingBiz {
 			} else if (drinkingB <= inputMoney) {
 				System.out.println("1: 콜라 , 2: 환타, 3: 사이다를 살 수 있습니다");
 				System.out.println("구매할 음료의 번호를 입력하시오");
+				
 			}
 			selectDrink = sc.nextInt();
+			VendingDao vendingDao = new VendingDaoImpl();
 			vendingDao.showingProductNum(selectDrink);
-			return selectDrink;
+			
 			
 
 		

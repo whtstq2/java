@@ -9,8 +9,8 @@ public interface BankBiz {
 	public List <BankVO> queryAllCus();
 	
 	public void verifyCusLevel();
-	public void createNewCus();
-	public void seeCustomerInfo();
+	public void createNewCus(BankVO newCus);
+	public void seeCustomerInfo(int customerNum);
 	public void checkReserveMoney();
 	public void withdrawMoney();
 	public void depositMoney();

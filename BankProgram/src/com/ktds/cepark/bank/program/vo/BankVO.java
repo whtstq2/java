@@ -15,19 +15,19 @@ public class BankVO {
 
 	private String name;
 	private int deposit;
+	private int withdraw;
 	private String level; // (newbie, old)
-	public int reserveFund  = 1000000;
-
-	public int getReserveFund() {
-		return reserveFund;
-	}
-
-	public void setReserveFund(int reserveFund) {
-		this.reserveFund = reserveFund;
-	}
 
 	public String getName() {
 		return name;
+	}
+
+	public int getWithdraw() {
+		return withdraw;
+	}
+
+	public void setWithdraw(int withdraw) {
+		this.withdraw = withdraw;
 	}
 
 	public void setName(String name) {

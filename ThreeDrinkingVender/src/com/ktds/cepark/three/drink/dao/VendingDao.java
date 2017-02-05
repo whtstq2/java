@@ -24,7 +24,7 @@ public interface VendingDao {
 	 * 
 	 * @return
 	 */
-	public int showingProduct(int inputMoney);
+	public void showingProduct(int inputMoney);
 
 	/**
 	 * 기존 자판기의 준비금 50000에 나가는 음료의 가격을 더한다

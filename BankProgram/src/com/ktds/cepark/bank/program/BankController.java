@@ -2,6 +2,12 @@ package com.ktds.cepark.bank.program;
 
 import java.util.Scanner;
 
+import com.ktds.cepark.bank.program.biz.BankBiz;
+import com.ktds.cepark.bank.program.biz.BankBizImpl;
+import com.ktds.cepark.bank.program.dao.BankDao;
+import com.ktds.cepark.bank.program.dao.BankDaoImpl;
+import com.ktds.cepark.bank.program.vo.BankVO;
+
 /**
  * 은행 프로그램 만들기
  * 기능 : 고객 등록, 기존 고객인지 확인, 고객 조회, 고객 정보 조회(예치금 정보, 이름 등)
@@ -23,46 +29,35 @@ public class BankController {
 	public void start () {
 		
 		BankController bankController = new BankController();
+		BankDao bankDao = new BankDaoImpl();
+		BankBiz bankBiz = new BankBizImpl();
 		Scanner input= new Scanner(System.in);
 		int chooseMenu=0;
+		
+		
+			System.out.println("===KT은행 관리자 프로그램에 오신 것을 환영합니다===");
+		System.out.println("1. 고객 번호입력");
+		System.out.println("2. 전체 고객 조회");
+		System.out.println("3. 종료");
+		System.out.println("번호 입력");
+		while (true) {
+		
 		chooseMenu = input.nextInt();
 		
-		System.out.println("===KT은행 관리자 프로그램에 오신 것을 환영합니다===");
-		System.out.println("1. 고객 등록");
-		System.out.println("2. 고객 조회");
-		System.out.println("3. 고객 정보 조회");
-		System.out.println("4. 은행 준비금 확인");
-		System.out.println("5. 출금");
-		System.out.println("6. 입금");
-		System.out.println("7. 종료");
-		
-		while (true) {
-			
 			if (chooseMenu==1) {
-				
-				
-			}
-			else if (chooseMenu ==2) {
-				
+				bankBiz.verifyCusLevel();
 				
 			}
-			else if (chooseMenu==3) {
-
-				
+			else if ( chooseMenu ==2) {
+				bankBiz.queryAllCus();
 			}
-			else if (chooseMenu ==4) {
-				
-			}
-			else if (chooseMenu ==5) {
-				
-			}
-			else if (chooseMenu ==6) {
-				
-			}
-			else {
+			else if ( chooseMenu ==3) {
+				System.out.println("종료");
 				break;
+				}
+			else  {
+				System.out.println("1에서 3의 숫자를 입력");
 			}
-			
 		}
 	}
 	

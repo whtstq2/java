@@ -6,7 +6,7 @@ public interface VendingBiz{
 	
 	public void changeMoney();
 	
-	public int showingProduct(int inputMoney);
+	public void showingProduct(int inputMoney);
 	
 	public void incomeIncrease();
 }

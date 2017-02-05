@@ -23,10 +23,10 @@ public interface BankDao {
 	public List <BankVO> queryAllCus();
 	
 	public void verifyCusLevel(int index);
-	public void createNewCus(Bank newBank );
-	public void seeCustomerInfo(int index );
+	public void createNewCus(BankVO newCus );
+	public void seeCustomerInfo(int customerNum );
 	public void checkReserveMoney(int reserve);
-	public void withdrawMoney(int index, int output);
-	public void depositMoney(int index, int input);
+	public void withdrawMoney(int index,BankVO withdraw);
+	public void depositMoney(int index, BankVO deposit);
 	
 }

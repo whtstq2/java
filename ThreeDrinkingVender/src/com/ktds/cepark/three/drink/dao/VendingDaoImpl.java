@@ -2,7 +2,7 @@ package com.ktds.cepark.three.drink.dao;
 
 public class VendingDaoImpl implements VendingDao {
 
-	private int selectDrink =0;
+
 	
 	public VendingDaoImpl() {
 
@@ -10,7 +10,7 @@ public class VendingDaoImpl implements VendingDao {
 
 	@Override
 	public void showingProductNum(int selectDrink) {
-
+		this.showingProductNum(selectDrink);
 	}
 
 	@Override
@@ -19,13 +19,13 @@ public class VendingDaoImpl implements VendingDao {
 	}
 
 	@Override
-	public int showingProduct(int inputMoney) {
-		return selectDrink;
+	public void showingProduct(int inputMoney) {
+		this.showingProduct(inputMoney);
 	}
 
 	@Override
 	public void incomeIncrease(int saleNumA, int saleNumB, int saleNumC) {
-
+		this.incomeIncrease(saleNumA, saleNumB, saleNumC);
 	}
 
 }
