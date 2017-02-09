@@ -32,21 +32,36 @@ public class Main {
 //					 employeesVO.getJobs().getMinSalary(),
 //					 employeesVO.getJobs().getMaxSalary()  );
 //	}
-		for (EmployeesVO employeesVO : departments) {
-			System.out.printf("%d\t%s\t%d\t%d\n", 
-					employeesVO.getDepartments().getDepartmentId(),
-					employeesVO.getDepartments().getDepartmentName(),
-					employeesVO.getDepartments().getLocationId(),
-					employeesVO.getDepartments().getManagerId());
+		for (EmployeesVO employeesVO : employees) {
+			System.out.printf("%d\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%f\t%d\t%d\n"
+					, employeesVO.getEmployeeId()
+					,employeesVO.getFirstName()
+					,employeesVO.getLastName()
+					,employeesVO.getEmail()
+					,employeesVO.getPhoneNumber()
+					,employeesVO.getHireDate()
+					,employeesVO.getJobId()
+					,employeesVO.getSalary()
+					,employeesVO.getCommissionPct()
+					,employeesVO.getManagerId()
+					,employeesVO.getDepartmentId()
+					);
 		}
-		for (CountriesVO countriesVO : countries) {
-			System.out.printf("%s\t%s\t%d\t%s\n",
-					countriesVO.getCountryId(),
-					countriesVO.getCounrtyName(),
-					countriesVO.getRegionId(),
-//					countriesVO.getRegions().getRegionId(),
-					countriesVO.getRegions().getRegionName());
-		}
+		
+//		for (EmployeesVO employeesVO : departments) {
+//			System.out.printf("%d\t%s\t%d\t%d\n", 
+//					employeesVO.getDepartments().getDepartmentId(),
+//					employeesVO.getDepartments().getDepartmentName(),
+//					employeesVO.getDepartments().getLocationId(),
+//					employeesVO.getDepartments().getManagerId());
+//		}
+//		for (CountriesVO countriesVO : countries) {
+//			System.out.printf("%s\t%s\t%d\t%s\n",
+//					countriesVO.getCountryId(),
+//					countriesVO.getCounrtyName(),
+//					countriesVO.getRegionId(),
+//					countriesVO.getRegions().getRegionName());
+//		}
 		
 		}
 		

@@ -18,6 +18,10 @@ import com.ktds.cepark.hr.vo.JobsVO;
 import com.ktds.cepark.hr.vo.LocationsVO;
 import com.ktds.cepark.hr.vo.RegionsVO;
 
+// BindData와 Types의 역할: 굳이 rs, employeesVO에 값을 집어 넣기 위해 일일이 쓰는 것을 간편화 하는 기능 
+// ex) departmentVO.setDepartmentId(rs.getInt("DEPARTMENT_ID"));
+// 데이터가 들어갈 자리를 만들어 주고 니 자리가 여기다 라는 걸 자동으로 하기위한 것 
+
 public class HRDaoImpl extends JDBCDaoSupport implements HRDao{
 
 	@Override
@@ -27,17 +31,27 @@ public class HRDaoImpl extends JDBCDaoSupport implements HRDao{
 
 			@Override
 			public String preparedQuery() {
-				String query = " SELECT  " +
-						"  EMPLOYEE_ID, FIRST_NAME, LAST_NAME,  " +
-						"   EMAIL, PHONE_NUMBER, HIRE_DATE,  " +
-						"   JOB_ID, SALARY, COMMISSION_PCT,  " +
-						"   MANAGER_ID, DEPARTMENT_ID " +
-						" FROM HR.EMPLOYEES " ;
-				return query;
+				StringBuffer query = new StringBuffer();
+				
+				query.append("SELECT EMPLOYEE_ID       ");
+				query.append("			, FIRST_NAME   ");
+				query.append("			, LAST_NAME    ");
+				query.append("			,EMAIL         ");
+				query.append("			,PHONE_NUMBER  ");
+				query.append("			,HIRE_DATE     ");
+				query.append("			,JOB_ID        ");
+				query.append("			,SALARY        ");
+				query.append("			,COMMISSION_PCT");
+				query.append("			,MANAGER_ID    ");
+				query.append("			,DEPARTMENT_ID ");
+				query.append("FROM		EMPLOYEES      ");
+				
+				return query.toString();
 			}
 
 			@Override
-			public String mappingParameters(PreparedStatement stmt)  {
+			public String mappingParameters(PreparedStatement stmt) throws SQLException {
+				//쿼리에 파라미터가 있으면 넣어주는 것 (없으니까 패스)
 				return null;
 			}
 
@@ -45,10 +59,17 @@ public class HRDaoImpl extends JDBCDaoSupport implements HRDao{
 			public Object getData(ResultSet rs) {
 				EmployeesVO employeesVO = new EmployeesVO();
 				BindData.bindData(rs, employeesVO);
-				return null;
+				return employeesVO;
 			}
 			
-		});
+		}); //서포트의 selectList를 호출 할것이다
+		//handler는 인터페이스라 구체적이지 않다  근데 구체화 시킬 때마다 클래스를 만들수는 없으니까 
+		//인터페이스에서 바로 구체화 시킨다. 생성과 동시에 구체화 
+		//이 방식은 제이쿼리와 안드로이드에서 자주쓰인다 
+		//즉, 구체화 시키는 중
+		//쿼리의 메소드 세개가 나온다 = 객체로 만듬
+		//셀렉트 리스트의 파라미터로들어간 (쿼리 핸들러)라고 불리는 인터페이스가 하나의 파라미터가 된것
+		//
 	}
 	
 	
