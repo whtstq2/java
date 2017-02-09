@@ -35,7 +35,7 @@ public class BankController {
 		int chooseMenu=0;
 		
 		
-			System.out.println("===KT은행 관리자 프로그램에 오신 것을 환영합니다===");
+		System.out.println("===KT은행 관리자 프로그램에 오신 것을 환영합니다===");
 		System.out.println("1. 고객 번호입력");
 		System.out.println("2. 전체 고객 조회");
 		System.out.println("3. 종료");

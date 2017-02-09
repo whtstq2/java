@@ -52,9 +52,9 @@ public class BankBizImpl implements BankBiz{
  */
 	@Override
 	public void verifyCusLevel() {
+		List<BankVO> customerList = bankDao.queryAllCus();
 		System.out.println("고객의 번호를 입력하시오");
 		int customerNum = input.nextInt();
-		List<BankVO> customerList = bankDao.queryAllCus();
 		
 		for (int i=0; i < customerList.size(); i++) {
 			if ( i == customerNum) {
