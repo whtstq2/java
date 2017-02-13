@@ -18,4 +18,6 @@ public interface HRDao {
 	
 	public EmployeesVO findOneEmployee( int employeeId); //리스트를 안써도 되는 것은 한명의 데이터만 가져올것이기 때문 
 	
+	
+	
 }

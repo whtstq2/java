@@ -2,6 +2,7 @@ package com.ktds.cepark.hr.biz;
 
 import java.util.List;
 
+
 import com.ktds.cepark.hr.dao.HRDao;
 import com.ktds.cepark.hr.dao.HRDaoImpl;
 import com.ktds.cepark.hr.vo.CountriesVO;
@@ -33,7 +34,7 @@ public class Main {
 //					 employeesVO.getJobs().getMaxSalary()  );
 //	}
 		for (EmployeesVO employeesVO : employees) {
-			System.out.printf("%d\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%f\t%d\t%d\n"
+			System.out.printf("\t%d\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%f\t%d\t%d\n"
 					, employeesVO.getEmployeeId()
 					,employeesVO.getFirstName()
 					,employeesVO.getLastName()
@@ -47,7 +48,7 @@ public class Main {
 					,employeesVO.getDepartmentId()
 					);
 		}
-		
+	
 //		for (EmployeesVO employeesVO : departments) {
 //			System.out.printf("%d\t%s\t%d\t%d\n", 
 //					employeesVO.getDepartments().getDepartmentId(),
